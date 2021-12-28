@@ -4,8 +4,6 @@
         import { TouchableOpacity } from 'react-native';
         import Detail from './components/Task';
 
-
-
         export default function App() {
 
           const [task, setTask]=useState();
@@ -23,12 +21,6 @@ const taskcompleted=(index)=>{
   copyValue.splice(index,1);  // going to remove that item from array
   setTaskItems(copyValue);
 }
-
-
-
-
-
-
         return (
         <>
         <View style={styles.container}>
@@ -41,15 +33,10 @@ const taskcompleted=(index)=>{
 <TouchableOpacity key={index} onPress={()=>taskcompleted()}>
 
 <Detail text={item}/> 
-</TouchableOpacity>
-
-
-        
-        
+</TouchableOpacity>        
         )})
 }        
         </View>
-
         </View>
 
         {/*write task from here*/}
@@ -59,21 +46,15 @@ const taskcompleted=(index)=>{
         <TextInput style={styles.input} placeholder={'Write your text' } value={task} onChangeText={text=>{setTask(text)}} ></TextInput>
 
         {/* will pop u keyboard for typing */}
-
         <TouchableOpacity onPress={()=>addHanderTask()}>
-
         <View style={styles.addWrapper}>
         <Text style={styles.addText}>+</Text>
         </View>
         </TouchableOpacity>
-
-
-        </KeyboardAvoidingView>
+       </KeyboardAvoidingView>
         </View>
         </>
-
-
-        );
+       );
         }
 
         const styles = StyleSheet.create({
